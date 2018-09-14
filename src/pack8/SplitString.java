@@ -17,7 +17,7 @@ import java.io.IOException;
     public class SplitString
     {
 
-        public static void main(String[] args) throws IOException {
+        public String splitCheck() throws IOException {
             long length;
             File file = new File("/home/cgi/Desktop/file2.txt");
 
@@ -42,6 +42,7 @@ import java.io.IOException;
             int count = 0;
             System.out.println(text);
             uniqueKeys = getUniqueKeys(keys);
+            String ans="";
 
             for(String key: uniqueKeys)
             {
@@ -56,9 +57,11 @@ import java.io.IOException;
                         count++;
                     }
                 }
-                System.out.println("Count of ["+key+"] is : "+count);
+               // System.out.println("Count of ["+key+"] is : "+count);
+                ans=ans+key+count;
                 count=0;
             }
+            return ans;
         }
 
         private static String[] getUniqueKeys(String[] keys)
